@@ -1,13 +1,14 @@
 "use strict";
 
-const removeStr = (arr) => {
-  let str = "";
+const even = (arr) => {
+  let largestEvenNumber = -1;
   for (let i = 0; i < arr.length; i++) {
-    if (str.length < arr[i].length) {
-      str = arr[i];
+    let lastDigit = arr[i] % 10;
+    if (largestEvenNumber < arr[i] && lastDigit % 2 === 0) {
+      largestEvenNumber = arr[i];
     }
   }
-  return str;
+  return largestEvenNumber;
 };
 
-console.log(removeStr(["omar", "zhioua"]));
+console.log(even([12, 0, 8, 60, 901]));
