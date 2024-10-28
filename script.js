@@ -1,8 +1,7 @@
 "use strict";
 
-const join = (arr) => {
-  return arr.join(",");
+const sorting = (arr) => {
+  return arr.sort((a, b) => a - b);
 };
 
-console.log(join(["omar", "zhioua", "2005"]));
-console.log(typeof join(["omar", "zhioua", "2005"]));
+console.log(sorting([2, 0, 1, 90, -3]));
