@@ -1,29 +1,12 @@
 "use strict";
 
-const unzip = (arr) => {
-  arr = arr.flat();
-  let arr1 = arr.filter((el) => {
-    if (typeof el === "number") {
-      return el;
-    }
-  });
-  let arr2 = arr.filter((el) => {
-    if (typeof el === "string") {
-      return el;
-    }
-  });
-  let arr3 = arr.filter((el) => {
-    if (typeof el === "boolean") {
-      return `${el}`;
-    }
-  });
-  console.log([arr1, arr2, arr3]);
+const difference = (arr, arr2) => {
+  let array = [...arr, ...arr2];
+  let set = new Set(array.flat(Infinity));
+  let finalArr = Array.from(set).sort((a, b) => a - b);
+  return finalArr.map((el) => el.toString());
 };
-unzip([
-  ["a", 1, true],
-  ["b", 2, false],
-]);
-unzip([
-  ["a", 1, false],
-  ["b", 2],
-]);
+
+console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+console.log(difference([1, 2, 3, 4, 5], [1, [2], [3, [[4]]], [5, 6]]));
+console.log(difference([1, 2, 3], [100, 2, 1, 10]));
