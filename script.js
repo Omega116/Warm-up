@@ -1,7 +1,15 @@
 "use strict";
 
-const sorting = (arr) => {
-  return arr.sort((a, b) => a - b);
+var student = {
+  name: "David Rayy",
+  sclass: "VI",
+  rollno: 12,
 };
 
-console.log(sorting([2, 0, 1, 90, -3]));
+const removeProperty = (obj, prop) => {
+  delete obj[prop];
+};
+
+console.log(student);
+removeProperty(student, "rollno");
+console.log(student);
