@@ -1,18 +1,16 @@
 "use strict";
 
-const humanize_format = (n) => {
-  if (n === undefined) {
-    return "";
-  } else if (n.toString().slice(-1) == 1) {
-    return "1st";
-  } else if (n.toString().slice(-1) == 2) {
-    return n + "nd";
+const flat = (str) => {
+  let include = str.includes(" ");
+  if (typeof str === "string") {
+    console.log(str === str.toLowerCase() && !include);
   } else {
-    return n + "th";
+    console.log("It must be a string.");
   }
 };
-console.log(humanize_format());
-console.log(humanize_format(1));
-console.log(humanize_format(8));
-console.log(humanize_format(301));
-console.log(humanize_format(402));
+
+flat("java exercises");
+flat("j");
+flat("JavaScriptExercises");
+flat("javascriptexercises");
+flat(12356);
