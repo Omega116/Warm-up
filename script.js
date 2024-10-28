@@ -1,7 +1,29 @@
 "use strict";
 
-const repeat = (el, n = 1) => {
-  return el.repeat(n);
+const unzip = (arr) => {
+  arr = arr.flat();
+  let arr1 = arr.filter((el) => {
+    if (typeof el === "number") {
+      return el;
+    }
+  });
+  let arr2 = arr.filter((el) => {
+    if (typeof el === "string") {
+      return el;
+    }
+  });
+  let arr3 = arr.filter((el) => {
+    if (typeof el === "boolean") {
+      return `${el}`;
+    }
+  });
+  console.log([arr1, arr2, arr3]);
 };
-
-console.log(repeat("Ha!"), repeat("Ha!", 2), repeat("Ha!", 3));
+unzip([
+  ["a", 1, true],
+  ["b", 2, false],
+]);
+unzip([
+  ["a", 1, false],
+  ["b", 2],
+]);
