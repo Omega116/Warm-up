@@ -1,9 +1,7 @@
 "use strict";
 
-const pattern = (n, el) => {
-  for (let i = 1; i <= n; i++) {
-    console.log(el.repeat(i));
-  }
+const repeat = (el, n = 1) => {
+  return el.repeat(n);
 };
 
-pattern(5, "*");
+console.log(repeat("Ha!"), repeat("Ha!", 2), repeat("Ha!", 3));
