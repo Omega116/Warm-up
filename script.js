@@ -1,14 +1,12 @@
 "use strict";
 
-const even = (arr) => {
-  let largestEvenNumber = -1;
-  for (let i = 0; i < arr.length; i++) {
-    let lastDigit = arr[i] % 10;
-    if (largestEvenNumber < arr[i] && lastDigit % 2 === 0) {
-      largestEvenNumber = arr[i];
-    }
+const replace = (str) => {
+  let newStr = str.replace(/\d/, "$");
+  if (newStr.includes("$")) {
+    return newStr;
+  } else {
+    return "no digits";
   }
-  return largestEvenNumber;
 };
 
-console.log(even([12, 0, 8, 60, 901]));
+console.log(replace("sdfv6v0"));
