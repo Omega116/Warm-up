@@ -1,10 +1,11 @@
 "use strict";
 
-const capitalize = (str) => {
-  return str
-    .split(" ")
-    .map((el) => el[0].toUpperCase() + el.slice(1))
-    .join(" ");
+const fact = (n) => {
+  if (n === 1) {
+    return 1;
+  } else {
+    return n * fact(n - 1);
+  }
 };
 
-console.log(capitalize("omar zhioua"));
+console.log(fact(6));
