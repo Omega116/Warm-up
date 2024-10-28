@@ -1,16 +1,12 @@
 "use strict";
 
-const flat = (str) => {
-  let include = str.includes(" ");
-  if (typeof str === "string") {
-    console.log(str === str.toLowerCase() && !include);
-  } else {
-    console.log("It must be a string.");
-  }
+const isPropExist = (obj, prop) => {
+  return obj.hasOwnProperty(prop);
 };
+const obj1 = { name: "alison", age: 26, role: "developer" };
 
-flat("java exercises");
-flat("j");
-flat("JavaScriptExercises");
-flat("javascriptexercises");
-flat(12356);
+console.log(isPropExist(obj1, "name"));
+
+const obj2 = { name: "ali", age: 26, role: "developer" };
+
+console.log(isPropExist(obj2, "password"));
