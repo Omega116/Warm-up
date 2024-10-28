@@ -1,12 +1,11 @@
 "use strict";
 
-const difference = (arr, arr2) => {
-  let array = [...arr, ...arr2];
-  let set = new Set(array.flat(Infinity));
-  let finalArr = Array.from(set).sort((a, b) => a - b);
-  return finalArr.map((el) => el.toString());
+const filter_array_values = (arr) => {
+  return arr.filter((el) => {
+    if (el) {
+      return el;
+    }
+  });
 };
 
-console.log(difference([1, 2, 3], [100, 2, 1, 10]));
-console.log(difference([1, 2, 3, 4, 5], [1, [2], [3, [[4]]], [5, 6]]));
-console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+console.log(filter_array_values([58, "", "abcd", true, null, false, 0]));
