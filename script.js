@@ -1,14 +1,18 @@
 "use strict";
 
-const swapcase = (str) => {
-  let newStr = "";
-  for (const letter of str) {
-    if (letter === letter.toUpperCase()) {
-      newStr += letter.toLowerCase();
-    } else {
-      newStr += letter.toUpperCase();
-    }
+const humanize_format = (n) => {
+  if (n === undefined) {
+    return "";
+  } else if (n.toString().slice(-1) == 1) {
+    return "1st";
+  } else if (n.toString().slice(-1) == 2) {
+    return n + "nd";
+  } else {
+    return n + "th";
   }
-  return newStr;
 };
-console.log(swapcase("AaBbc"));
+console.log(humanize_format());
+console.log(humanize_format(1));
+console.log(humanize_format(8));
+console.log(humanize_format(301));
+console.log(humanize_format(402));
