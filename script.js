@@ -17,11 +17,14 @@ const orderWith = (arr, prop, order) => {
       if (arr[i][prop] === order[c]) {
         final.push(arr[i]);
       }
+      if (c === order.length - 1 && final.includes(arr[i]) === false) {
+        semiFinal.push(arr[i]);
+      }
     }
     c++;
   }
 
-  return final;
+  return [...final, ...semiFinal];
 };
 
 console.log(orderWith(users, "language", ["Javascript", "TypeScript", "Java"]));
