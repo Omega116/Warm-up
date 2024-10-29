@@ -1,12 +1,17 @@
 "use strict";
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const isPropExist = (obj, prop) => {
-  return obj.hasOwnProperty(prop);
+const chunkArray = (arr, m, n) => {
+  let myArr = [];
+  let c = 0;
+  while (c < m * n) {
+    myArr.push(arr.slice(c, c + n));
+    c += n;
+  }
+  for (let i = m * n; i < arr.length; i++) {
+    myArr.push(arr[i]);
+  }
+  return myArr;
 };
-const obj1 = { name: "alison", age: 26, role: "developer" };
-
-console.log(isPropExist(obj1, "name"));
-
-const obj2 = { name: "ali", age: 26, role: "developer" };
-
-console.log(isPropExist(obj2, "password"));
+console.log(chunkArray(arr, 2, 5));
+console.log(chunkArray(arr, 3, 3));
